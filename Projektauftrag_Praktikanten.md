@@ -8,7 +8,7 @@ Im Rahmen dieses Projekts soll eine einfache Webapplikation entwickelt werden, m
 
 Das Ziel ist es, eine funktionierende Webapplikation zu entwickeln, in der sich Benutzer anmelden, eigene Lernkarten erstellen und ihr Wissen mit einem einfachen Quiz überprüfen können.
 
-Dabei sollen die Grundlagen der Webentwicklung mit **Angular, TypeScript, HTML und CSS** kennengelernt und praktisch angewendet werden.
+Dabei sollen die Grundlagen der Webentwicklung mit **Angular, TypeScript, HTML, CSS und C#** kennengelernt und praktisch angewendet werden.
 
 ## Technologien
 
@@ -18,7 +18,10 @@ Für das Projekt sollen folgende Technologien verwendet werden:
 * TypeScript
 * HTML
 * CSS
-* Eine einfache Datenbank bzw. ein Backend für die Speicherung der Daten
+* C# mit ASP.NET Core für das Backend und die API
+* Eine einfache Datenbank für die Speicherung der Daten
+
+Das Angular-Frontend kommuniziert für die Speicherung und Abfrage der Lernkarten mit dem C#-Backend.
 
 ## Anforderungen
 
