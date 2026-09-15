@@ -48,7 +48,7 @@ dotnet build .\backend\Lernkarten.Api.csproj
 Erwartete Antwort:
 
 ```json
-{"status":"ok"}
+{ "status": "ok" }
 ```
 
 ## API-Endpunkte
@@ -72,4 +72,3 @@ npm start
 
 Die einfache Angular-Startseite ist danach unter `http://localhost:4200`
 erreichbar. Weitere Funktionen sind noch nicht eingerichtet.
-
