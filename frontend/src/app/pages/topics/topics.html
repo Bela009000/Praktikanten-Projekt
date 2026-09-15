@@ -1,0 +1,25 @@
+<div class="page-wrapper">
+    <div class="topics-container">
+        <h1>Meine Themen</h1>
+
+        <form (ngSubmit)="addTopic()" class="add-topic-form">
+            <input type="text" placeholder="Neues Thema (z. B. Mathematik)" [(ngModel)]="newTopicName"
+                name="newTopicName" />
+            <button type="submit">Hinzufügen</button>
+        </form>
+
+        <div class="topic-grid" *ngIf="topics.length > 0">
+            <div class="topic-tile" *ngFor="let topic of topics">
+                <button type="button" class="delete-icon" (click)="deleteTopic(topic.id)" title="Löschen">✕</button>
+                <div class="topic-tile-name">{{ topic.name }}</div>
+                <div class="topic-tile-actions">
+                    <button type="button" class="tile-btn">Karten</button>
+                    <button type="button" class="tile-btn">Lernen</button>
+                    <button type="button" class="tile-btn">Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <p *ngIf="topics.length === 0" class="empty-state">Noch keine Themen vorhanden.</p>
+    </div>
+</div>

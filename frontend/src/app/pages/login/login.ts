@@ -14,8 +14,13 @@ export class Login {
   password = '';
   message = '';
   isSuccess = false;
+  showPassword = false;
 
   constructor(private router: Router) {}
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
 
   onSubmit() {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -28,6 +33,7 @@ export class Login {
       return;
     }
 
+    localStorage.setItem('currentUser', this.username);
     this.router.navigate(['/home']);
   }
 }

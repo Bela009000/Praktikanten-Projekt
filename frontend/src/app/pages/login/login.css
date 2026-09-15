@@ -81,12 +81,13 @@ button:hover {
 button:active {
   transform: translateY(1px);
 }
+
 .back-button {
   display: block;
   text-align: center;
   text-decoration: none;
   width: 100%;
-  padding: 10px;
+  padding: 11px;
   margin-top: 12px;
   background-color: transparent;
   color: #7c3aed;
@@ -104,4 +105,34 @@ button:active {
 .back-button:hover {
   background-color: #7c3aed;
   color: white;
+}
+
+.password-hint {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #7c3aed;
+}
+
+.password-wrapper {
+  gap: 8px;
+}
+
+.password-wrapper input {
+  flex: 1;
+}
+
+.toggle-password {
+  padding: 4px 10px;
+  background-color: transparent;
+  color: #7c3aed;
+  border: 1px solid #d8b4fe;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.toggle-password:hover {
+  background-color: #f3e8ff;
 }

@@ -10,7 +10,13 @@
 
             <div class="form-group">
                 <label for="password">Passwort</label>
-                <input type="password" id="password" name="password" [(ngModel)]="password" />
+                <div class="password-wrapper">
+                    <input [type]="showPassword ? 'text' : 'password'" id="password" name="password"
+                        [(ngModel)]="password" />
+                    <button type="button" class="toggle-password" (click)="togglePassword()">
+                        {{ showPassword ? 'Verbergen' : 'Anzeigen' }}
+                    </button>
+                </div>
             </div>
 
             <button type="submit">Einloggen</button>
