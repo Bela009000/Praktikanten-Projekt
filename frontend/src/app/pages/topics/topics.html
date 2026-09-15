@@ -1,5 +1,5 @@
 <div class="page-wrapper">
-    <div class="topics-container">
+    <div class="home-container">
         <h1>Meine Themen</h1>
 
         <form (ngSubmit)="addTopic()" class="add-topic-form">
@@ -8,17 +8,15 @@
             <button type="submit">Hinzufügen</button>
         </form>
 
-        <div class="topic-grid" *ngIf="topics.length > 0">
-            <div class="topic-tile" *ngFor="let topic of topics">
-                <button type="button" class="delete-icon" (click)="deleteTopic(topic.id)" title="Löschen">✕</button>
-                <div class="topic-tile-name">{{ topic.name }}</div>
-                <div class="topic-tile-actions">
-                    <button type="button" class="tile-btn">Karten</button>
-                    <button type="button" class="tile-btn">Lernen</button>
-                    <button type="button" class="tile-btn">Quiz</button>
+        <ul class="topic-list" *ngIf="topics.length > 0">
+            <li *ngFor="let topic of topics" class="topic-item">
+                <span class="topic-name">{{ topic.name }}</span>
+                <div class="topic-actions">
+                    <button type="button" class="select-btn">Auswählen</button>
+                    <button type="button" class="delete-btn" (click)="deleteTopic(topic.id)">Löschen</button>
                 </div>
-            </div>
-        </div>
+            </li>
+        </ul>
 
         <p *ngIf="topics.length === 0" class="empty-state">Noch keine Themen vorhanden.</p>
     </div>
