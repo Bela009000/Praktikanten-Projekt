@@ -11,7 +11,15 @@
 
             <div class="form-group">
                 <label for="password">Passwort</label>
-                <input type="password" id="password" name="password" [(ngModel)]="password" />
+                <div class="password-wrapper">
+                    <input [type]="showPassword ? 'text' : 'password'" id="password" name="password"
+                        [(ngModel)]="password" />
+                    <button type="button" class="toggle-password" (click)="togglePassword()">
+                        {{ showPassword ? 'Verbergen' : 'Anzeigen' }}
+                    </button>
+                </div>
+                <small class="password-hint">Mindestens 6 Zeichen, ein Grossbuchstabe, eine Zahl und ein
+                    Sonderzeichen</small>
             </div>
 
             <button type="submit">Registrieren</button>

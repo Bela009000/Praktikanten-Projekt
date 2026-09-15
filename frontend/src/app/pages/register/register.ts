@@ -14,8 +14,39 @@ export class Register {
   password = '';
   message = '';
   isSuccess = false;
+  showPassword = false;
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
 
   onSubmit() {
+    if (this.password.length < 6) {
+      this.message = 'Das Passwort muss mindestens 6 Zeichen lang sein.';
+      this.isSuccess = false;
+      return;
+    }
+
+    const hasUpperCase = /[A-Z]/.test(this.password);
+    if (!hasUpperCase) {
+      this.message = 'Das Passwort muss mindestens einen Großbuchstaben enthalten.';
+      this.isSuccess = false;
+      return;
+    }
+
+    const hasNumber = /[0-9]/.test(this.password);
+    if (!hasNumber) {
+      this.message = 'Das Passwort muss mindestens eine Zahl enthalten.';
+      this.isSuccess = false;
+      return;
+    }
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(this.password);
+    if (!hasSpecialChar) {
+      this.message = 'Das Passwort muss mindestens ein Sonderzeichen enthalten (z. B. ! @ # $).';
+      this.isSuccess = false;
+      return;
+    }
+
     const users = JSON.parse(localStorage.getItem('users') || '[]');
 
     const usernameExists = users.some((u: any) => u.username === this.username);
