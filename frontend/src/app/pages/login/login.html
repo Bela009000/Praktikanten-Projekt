@@ -15,6 +15,9 @@
 
             <button type="submit">Einloggen</button>
         </form>
+
+        <p *ngIf="message" [style.color]="isSuccess ? 'green' : 'red'">{{ message }}</p>
+
         <a routerLink="/register" class="back-button">Zurück zur Registrierung</a>
     </div>
 </div>

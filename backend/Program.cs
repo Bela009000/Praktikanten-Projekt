@@ -13,6 +13,7 @@ builder.Services.AddCors(options =>
     });
 });
 builder.Services.AddSingleton<ICardService, InMemoryCardService>();
+builder.Services.AddSingleton<UserStore>();
 
 var app = builder.Build();
 

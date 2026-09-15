@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, CommonModule],
   selector: 'app-login',
   styleUrl: './login.css',
   templateUrl: './login.html',
@@ -11,8 +12,22 @@ import { RouterLink } from '@angular/router';
 export class Login {
   username = '';
   password = '';
+  message = '';
+  isSuccess = false;
+
+  constructor(private router: Router) {}
 
   onSubmit() {
-    console.log('Login geklickt:', this.username, this.password);
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    const user = users.find((u: any) => u.username === this.username);
+
+    if (!user || user.password !== this.password) {
+      this.message = 'Benutzername oder Passwort ist falsch.';
+      this.isSuccess = false;
+      return;
+    }
+
+    this.router.navigate(['/home']);
   }
 }
